@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medistory — Поддержка</title>
+<meta name="description" content="Приложение для подготовки к приёму: собирает вашу медицинскую историю и превращает её в одностраничное резюме для врача. Всё хранится на телефоне.">
+<meta property="og:title" content="Medistory — Поддержка">
+<meta property="og:description" content="Приложение для подготовки к приёму: собирает вашу медицинскую историю и превращает её в одностраничное резюме для врача. Всё хранится на телефоне.">
+<meta property="og:image" content="assets/icon.png">
+<link rel="icon" href="assets/icon.png">
+<style>
+:root {
+  --bg:#F7F5F1; --card:#FFFFFF; --deep:#0F3D3E; --active:#287D77;
+  --lavender:#8F82D8; --text:#1B2B2A; --muted:#6B7A78; --line:#E8E5E1;
+  --mint:#E8F3F1;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0A0F10; --card:#141C1C; --deep:#E6ECE8; --active:#53ABA2;
+          --lavender:#A89CE6; --text:#F2F4F2; --muted:#B9C1BE; --line:#232A28;
+          --mint:#143734; }
+}
+* { box-sizing:border-box; }
+body { margin:0; padding:0; background:var(--bg); color:var(--text);
+  font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased; }
+main { max-width:760px; margin:0 auto; padding:0 20px 80px; }
+h1 { font-family:ui-serif,Georgia,serif; font-weight:600; font-size:clamp(34px,7vw,52px);
+  line-height:1.1; margin:0 0 12px; color:var(--deep); }
+h2 { font-family:ui-serif,Georgia,serif; font-weight:600; font-size:clamp(24px,4vw,32px);
+  margin:56px 0 6px; color:var(--deep); }
+h3 { font-size:18px; margin:0 0 4px; }
+p { margin:0 0 14px; }
+.lede { font-size:clamp(18px,2.4vw,21px); color:var(--muted); margin-bottom:28px; }
+.hero { text-align:center; padding:56px 0 8px; position:relative; }
+.hero img.icon { width:104px; height:104px; border-radius:24px; box-shadow:0 8px 30px rgba(0,0,0,.10); }
+.branch { position:absolute; width:190px; opacity:.5; pointer-events:none;
+  top:-10px; right:-40px; transform:rotate(-42deg); }
+@media (max-width:700px) { .branch { width:130px; right:-30px; } }
+.cards { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px 22px; }
+.card p { color:var(--muted); margin:0; font-size:16px; }
+.steps { counter-reset:s; padding:0; margin:18px 0 0; list-style:none; }
+.steps li { counter-increment:s; position:relative; padding:0 0 0 46px; margin:0 0 18px; }
+.steps li::before { content:counter(s); position:absolute; left:0; top:-2px;
+  width:30px; height:30px; border-radius:50%; background:var(--mint); color:var(--active);
+  display:grid; place-items:center; font-weight:600; font-size:15px; }
+.note { background:var(--mint); border-radius:18px; padding:22px 24px; margin-top:18px; }
+.note p:last-child { margin-bottom:0; }
+.faq { margin-top:18px; }
+.faq details { border-bottom:1px solid var(--line); padding:14px 0; }
+.faq summary { cursor:pointer; font-weight:500; list-style:none; }
+.faq summary::-webkit-details-marker { display:none; }
+.faq summary::after { content:"+"; float:right; color:var(--muted); }
+.faq details[open] summary::after { content:"–"; }
+.faq p { margin:10px 0 0; color:var(--muted); }
+nav.langs { display:flex; gap:8px; justify-content:center; padding:22px 0 0; flex-wrap:wrap; }
+nav.langs a { text-decoration:none; color:var(--active); border:1px solid var(--line);
+  border-radius:999px; padding:6px 14px; font-size:14px; background:var(--card); }
+nav.langs a[aria-current] { background:var(--mint); border-color:transparent; }
+.cta { display:inline-block; margin-top:8px; background:var(--deep); color:#fff;
+  text-decoration:none; border-radius:16px; padding:15px 30px; font-weight:600; font-size:17px; }
+@media (prefers-color-scheme: dark) { .cta { color:#0A0F10; } }
+.cta.secondary { background:transparent; color:var(--active); border:1px solid var(--line); }
+footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
+  color:var(--muted); font-size:14px; }
+footer a { color:var(--active); }
+</style>
+</head>
+<body>
+<main>
+
+<div class="hero" style="padding-bottom:0">
+  <h1>Поддержка</h1>
+  <p class="lede">Напишите — отвечаем обычно в течение пары дней.</p>
+</div>
+<div class="card" style="margin-bottom:14px"><h3>Как связаться</h3><p>Почта: <a href="mailto:pogosyan.chris@gmail.com">pogosyan.chris@gmail.com</a>. Опишите, что произошло и на каком экране, — этого хватит, чтобы разобраться. Скриншот приложите, если он есть.</p></div><div class="card" style="margin-bottom:14px"><h3>Данные не подтянулись из Здоровья</h3><p>Лекарства Apple отдаёт по одному: в системном окне нужно отметить конкретные препараты. Открыть его заново можно в «Настройки → Apple Здоровье». Чтение списка лекарств работает начиная с iOS 26.</p></div><div class="card" style="margin-bottom:14px"><h3>Пропали записи</h3><p>История хранится только на телефоне, поэтому восстановить её у нас нельзя. Если вы делали резервную копию, откройте «Настройки → Восстановить из копии».</p></div><div class="card" style="margin-bottom:14px"><h3>Перенести историю на новый телефон</h3><p>На старом: «Настройки → Сохранить копию». На новом: «Восстановить из копии».</p></div>
+<div class="card"><h3>Данные остаются у вас</h3>
+  <p><a href="https://krispo95.github.io/medistory-legal/">Читать политику конфиденциальности целиком →</a></p></div>
+<p style="margin-top:28px"><a href="index.html">← На главную</a></p>
+
+<footer>
+  <p>© 2026 Medistory ·
+     <a href="https://krispo95.github.io/medistory-legal/">Политика конфиденциальности</a> ·
+     <a href="support.html">Поддержка</a> ·
+     <a href="mailto:pogosyan.chris@gmail.com">pogosyan.chris@gmail.com</a></p>
+</footer>
+<nav class="langs"><a href="support.html" aria-current="page">Русский</a><a href="en/support.html">English</a><a href="es/support.html">Español</a></nav>
+</main>
+</body>
+</html>

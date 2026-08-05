@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medistory — no olvide nada de lo que quiere contarle al médico</title>
+<meta name="description" content="Una app que reúne su historial médico y lo convierte en un resumen de una página para el médico. Todo se queda en su teléfono.">
+<meta property="og:title" content="Medistory — no olvide nada de lo que quiere contarle al médico">
+<meta property="og:description" content="Una app que reúne su historial médico y lo convierte en un resumen de una página para el médico. Todo se queda en su teléfono.">
+<meta property="og:image" content="../assets/icon.png">
+<link rel="icon" href="../assets/icon.png">
+<style>
+:root {
+  --bg:#F7F5F1; --card:#FFFFFF; --deep:#0F3D3E; --active:#287D77;
+  --lavender:#8F82D8; --text:#1B2B2A; --muted:#6B7A78; --line:#E8E5E1;
+  --mint:#E8F3F1;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0A0F10; --card:#141C1C; --deep:#E6ECE8; --active:#53ABA2;
+          --lavender:#A89CE6; --text:#F2F4F2; --muted:#B9C1BE; --line:#232A28;
+          --mint:#143734; }
+}
+* { box-sizing:border-box; }
+body { margin:0; padding:0; background:var(--bg); color:var(--text);
+  font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased; }
+main { max-width:760px; margin:0 auto; padding:0 20px 80px; }
+h1 { font-family:ui-serif,Georgia,serif; font-weight:600; font-size:clamp(34px,7vw,52px);
+  line-height:1.1; margin:0 0 12px; color:var(--deep); }
+h2 { font-family:ui-serif,Georgia,serif; font-weight:600; font-size:clamp(24px,4vw,32px);
+  margin:56px 0 6px; color:var(--deep); }
+h3 { font-size:18px; margin:0 0 4px; }
+p { margin:0 0 14px; }
+.lede { font-size:clamp(18px,2.4vw,21px); color:var(--muted); margin-bottom:28px; }
+.hero { text-align:center; padding:56px 0 8px; position:relative; }
+.hero img.icon { width:104px; height:104px; border-radius:24px; box-shadow:0 8px 30px rgba(0,0,0,.10); }
+.branch { position:absolute; width:190px; opacity:.5; pointer-events:none;
+  top:-10px; right:-40px; transform:rotate(-42deg); }
+@media (max-width:700px) { .branch { width:130px; right:-30px; } }
+.cards { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px 22px; }
+.card p { color:var(--muted); margin:0; font-size:16px; }
+.steps { counter-reset:s; padding:0; margin:18px 0 0; list-style:none; }
+.steps li { counter-increment:s; position:relative; padding:0 0 0 46px; margin:0 0 18px; }
+.steps li::before { content:counter(s); position:absolute; left:0; top:-2px;
+  width:30px; height:30px; border-radius:50%; background:var(--mint); color:var(--active);
+  display:grid; place-items:center; font-weight:600; font-size:15px; }
+.note { background:var(--mint); border-radius:18px; padding:22px 24px; margin-top:18px; }
+.note p:last-child { margin-bottom:0; }
+.faq { margin-top:18px; }
+.faq details { border-bottom:1px solid var(--line); padding:14px 0; }
+.faq summary { cursor:pointer; font-weight:500; list-style:none; }
+.faq summary::-webkit-details-marker { display:none; }
+.faq summary::after { content:"+"; float:right; color:var(--muted); }
+.faq details[open] summary::after { content:"–"; }
+.faq p { margin:10px 0 0; color:var(--muted); }
+nav.langs { display:flex; gap:8px; justify-content:center; padding:22px 0 0; flex-wrap:wrap; }
+nav.langs a { text-decoration:none; color:var(--active); border:1px solid var(--line);
+  border-radius:999px; padding:6px 14px; font-size:14px; background:var(--card); }
+nav.langs a[aria-current] { background:var(--mint); border-color:transparent; }
+.cta { display:inline-block; margin-top:8px; background:var(--deep); color:#fff;
+  text-decoration:none; border-radius:16px; padding:15px 30px; font-weight:600; font-size:17px; }
+@media (prefers-color-scheme: dark) { .cta { color:#0A0F10; } }
+.cta.secondary { background:transparent; color:var(--active); border:1px solid var(--line); }
+footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
+  color:var(--muted); font-size:14px; }
+footer a { color:var(--active); }
+</style>
+</head>
+<body>
+<main>
+
+<div class="hero">
+  <img class="branch" src="../assets/branch.png" alt="">
+  <img class="icon" src="../assets/icon.png" alt="Medistory">
+  <h1>Medistory</h1>
+  <p class="lede" style="margin-bottom:18px">Su historia de salud</p>
+  <p class="lede">La consulta dura diez minutos y hay mucho que contar. Medistory hace preguntas breves antes y prepara un resumen de una página que puede enseñar desde el móvil o imprimir.</p>
+  <a class="cta" href="mailto:pogosyan.chris@gmail.com">Pronto en el App Store</a>
+  <p style="color:var(--muted);font-size:14px;margin-top:10px">Escríbanos y le avisamos cuando salga</p>
+</div>
+
+<h2>Qué hace</h2>
+<div class="cards"><div class="card"><h3>Recuerda por usted</h3><p>Enfermedades, medicación, alergias, cirugías y antecedentes familiares: se rellena una vez y luego solo se completa.</p></div><div class="card"><h3>Pregunta lo que importa</h3><p>Antes de la consulta: preguntas breves sobre su molestia — cuándo empezó, qué la empeora, qué ha tomado ya.</p></div><div class="card"><h3>Habla el idioma del médico</h3><p>Un resumen en español, inglés o ruso, con los nombres oficiales de diagnósticos y medicamentos.</p></div></div>
+
+<h2>Cómo funciona</h2>
+<ol class="steps"><li><h3>Rellena su perfil</h3><p style="color:var(--muted);margin:0">Ocho bloques cortos, unos tres minutos; cualquiera se puede omitir. El peso, la estatura y los medicamentos pueden venir de Salud.</p></li><li><h3>Dice a qué médico va</h3><p style="color:var(--muted);margin:0">Y describe qué le preocupa, con sus propias palabras.</p></li><li><h3>Responde unas preguntas</h3><p style="color:var(--muted);margin:0">Suelen ser entre cinco y diez, todas con opciones preparadas. «No lo sé» es una respuesta válida en cualquiera.</p></li><li><h3>Enseña el resumen</h3><p style="color:var(--muted);margin:0">Una página: el motivo, su cronología, lo importante para esta consulta y un breve historial. PDF, texto o directamente la pantalla.</p></li></ol>
+
+<h2>Sus datos se quedan con usted</h2>
+<div class="note"><p>El historial se guarda solo en su teléfono. Sin cuentas ni servidores: no podemos leerlo, recuperarlo ni entregárselo a nadie.</p><p>Las preguntas de seguimiento las genera el modelo de Apple integrado en iOS, y el texto libre también se traduce en el dispositivo. Sus palabras no salen a internet.</p>
+  <p style="margin-top:14px"><a href="https://krispo95.github.io/medistory-legal/">Leer la política de privacidad completa →</a></p>
+</div>
+
+<h2>De dónde salen los nombres</h2>
+<p style="color:var(--muted)">Los diagnósticos vienen de la CIE-11 de la OMS (30 000 códigos con traducciones oficiales a tres idiomas) y de la CIE-10. Los medicamentos, de la clasificación ATC de la OMS. Por eso «tiroides» encuentra «Hipotiroidismo» y un médico ruso ve «Гипотиреоз»: es el mismo código.</p>
+
+<h2>Preguntas</h2>
+<div class="faq"><details><summary>¿Diagnostica?</summary><p>No. La app no diagnostica, no clasifica la urgencia y no recomienda tratamientos. Ayuda a ordenar lo que quiere contarle al médico y no sustituye la atención médica.</p></details><details><summary>¿Hace falta internet?</summary><p>No. Los catálogos van dentro de la app; las preguntas y la traducción funcionan en el propio teléfono.</p></details><details><summary>¿Qué es gratis?</summary><p>Todo salvo traducir el resumen a otro idioma: el perfil, la entrevista, el resumen y el PDF en su idioma no cuestan nada.</p></details><details><summary>¿Qué pasa con mis datos si borro la app?</summary><p>Se van con ella: no guardamos ninguna copia. Antes puede guardar un archivo de respaldo y llevar el historial a otro teléfono.</p></details><details><summary>¿Funciona sin Salud de Apple?</summary><p>Sí. Salud solo evita teclear el peso, la estatura y los medicamentos; conectarlo es opcional.</p></details></div>
+
+<footer>
+  <p>© 2026 Medistory ·
+     <a href="https://krispo95.github.io/medistory-legal/">Política de privacidad</a> ·
+     <a href="support.html">Soporte</a> ·
+     <a href="mailto:pogosyan.chris@gmail.com">pogosyan.chris@gmail.com</a></p>
+</footer>
+<nav class="langs"><a href="../index.html">Русский</a><a href="../en/index.html">English</a><a href="index.html" aria-current="page">Español</a></nav>
+</main>
+</body>
+</html>
