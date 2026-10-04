@@ -83,7 +83,8 @@ footer a { color:var(--active); }
 
 EMAIL = "krispo.dev@gmail.com"
 PRIVACY_URL = "https://krispo95.github.io/medistory-legal/"
-APPSTORE_URL = ""  # появится после публикации; пока кнопка ведёт на почту
+APPSTORE_URL = ("https://apps.apple.com/app/apple-store/id6797866671"
+                "?pt=129030541&ct=site_hero&mt=8")  # без страны: Apple сам выберет витрину
 
 CONTENT = {
     "ru": {
@@ -96,8 +97,8 @@ CONTENT = {
         "lede": "На приёме десять минут, а рассказать нужно многое. Medistory задаёт короткие "
                 "вопросы заранее и собирает одностраничное резюме, которое можно показать "
                 "врачу с телефона или распечатать.",
-        "cta": "Скоро в App Store",
-        "cta_note": "Пишем — расскажем, когда выйдет",
+        "cta": "Загрузить в App Store",
+        "cta_note": "iPhone. Данные остаются на телефоне",
         "what_title": "Что делает",
         "what": [
             ("Помнит за вас", "Диагнозы, лекарства, аллергии, операции и семейная история — "
@@ -173,8 +174,8 @@ CONTENT = {
         "lede": "An appointment lasts ten minutes, and there is a lot to say. Medistory asks "
                 "short questions beforehand and builds a one-page summary you can show on "
                 "your phone or print.",
-        "cta": "Coming to the App Store",
-        "cta_note": "Write to us and we'll tell you when it's out",
+        "cta": "Download on the App Store",
+        "cta_note": "iPhone. Your data stays on the phone",
         "what_title": "What it does",
         "what": [
             ("Remembers for you", "Conditions, medications, allergies, surgeries and family history — "
@@ -249,8 +250,8 @@ CONTENT = {
         "lede": "La consulta dura diez minutos y hay mucho que contar. Medistory hace preguntas "
                 "breves antes y prepara un resumen de una página que puede enseñar desde el "
                 "móvil o imprimir.",
-        "cta": "Pronto en el App Store",
-        "cta_note": "Escríbanos y le avisamos cuando salga",
+        "cta": "Descárgalo en el App Store",
+        "cta_note": "iPhone. Sus datos no salen del teléfono",
         "what_title": "Qué hace",
         "what": [
             ("Recuerda por usted", "Enfermedades, medicación, alergias, cirugías y antecedentes "
@@ -375,7 +376,8 @@ def shell(c: dict, page: str, body: str, title: str) -> str:
 
 def landing(c: dict) -> str:
     assets = "assets" if c["lang"] == "ru" else "../assets"
-    cta_href = APPSTORE_URL or f"mailto:{EMAIL}"
+    # The store URL carries query parameters, so & has to be escaped here.
+    cta_href = html.escape(APPSTORE_URL or f"mailto:{EMAIL}", quote=True)
 
     cards = "".join(
         f'<div class="card"><h3>{html.escape(t)}</h3><p>{html.escape(d)}</p></div>'
