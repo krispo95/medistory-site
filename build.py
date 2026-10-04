@@ -81,7 +81,7 @@ footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--line);
 footer a { color:var(--active); }
 """
 
-EMAIL = "pogosyan.chris@gmail.com"
+EMAIL = "krispo.dev@gmail.com"
 PRIVACY_URL = "https://krispo95.github.io/medistory-legal/"
 APPSTORE_URL = ""  # появится после публикации; пока кнопка ведёт на почту
 
